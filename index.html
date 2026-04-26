@@ -4,247 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audiovision Weekly Blog</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #111318;
-      color: #f2f2f2;
-      line-height: 1.75;
-    }
-
-    .page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    header {
-      padding: 64px 30px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, #1b1f2a, #30253f);
-      text-align: center;
-      margin-bottom: 32px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    }
-
-    header h1 {
-      font-size: 44px;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      font-size: 18px;
-      color: #d8d8d8;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 36px;
-      padding: 16px;
-      background: rgba(17, 19, 24, 0.92);
-      backdrop-filter: blur(10px);
-      border-radius: 18px;
-    }
-
-    nav a {
-      color: #f2f2f2;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      transition: 0.25s;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      background: rgba(255,255,255,0.18);
-      transform: translateY(-2px);
-    }
-
-    section {
-      background: #1a1d25;
-      padding: 32px;
-      border-radius: 22px;
-      margin-bottom: 28px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .week-label {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 13px;
-      border-radius: 999px;
-      background: rgba(255, 226, 168, 0.14);
-      color: #ffe2a8;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
-
-    .status {
-      display: inline-block;
-      margin: 4px 6px 12px 0;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(185, 215, 255, 0.12);
-      color: #cfe2ff;
-      font-size: 14px;
-    }
-
-    .catchup {
-      background: rgba(255, 226, 168, 0.12);
-      border-left: 4px solid #ffe2a8;
-      padding: 16px 18px;
-      border-radius: 12px;
-      margin: 18px 0;
-    }
-
-    .honesty-note {
-      background: rgba(255, 120, 120, 0.09);
-      border-left: 4px solid #ff9b9b;
-      padding: 16px 18px;
-      border-radius: 12px;
-      margin: 18px 0;
-    }
-
-    h2 {
-      color: #ffe2a8;
-      margin-bottom: 18px;
-      font-size: 30px;
-    }
-
-    h3 {
-      color: #b9d7ff;
-      margin-top: 24px;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    p {
-      margin-bottom: 16px;
-      color: #e6e6e6;
-    }
-
-    ul {
-      margin-left: 22px;
-      margin-bottom: 16px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .sound-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .sound-card {
-      background: #242836;
-      padding: 20px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .sound-card h3 {
-      margin-top: 0;
-    }
-
-    .audio-box {
-      margin-top: 18px;
-      padding: 20px;
-      border-radius: 18px;
-      background: #242836;
-      border: 1px dashed rgba(255,255,255,0.35);
-    }
-
-    audio {
-      width: 100%;
-      margin-top: 12px;
-    }
-
-    .image-placeholder {
-      width: 100%;
-      min-height: 220px;
-      border-radius: 18px;
-      background: repeating-linear-gradient(
-        45deg,
-        #242836,
-        #242836 12px,
-        #2d3242 12px,
-        #2d3242 24px
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #cfcfcf;
-      text-align: center;
-      padding: 20px;
-      margin-top: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .small-text {
-      font-size: 14px;
-      color: #bfc4d2;
-    }
-
-    footer {
-      text-align: center;
-      color: #aaa;
-      padding: 30px 0 10px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-      header h1 {
-        font-size: 32px;
-      }
-
-      section {
-        padding: 22px;
-      }
-
-      nav {
-        position: static;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="page">
-    <header>
+    <header class="hero">
       <h1>Audiovision Weekly Blog</h1>
       <p>
-        Weekly reflections on sound exercises, creative process, technical experiments and personal development in Audiovision.
+        Weekly reflections on sound exercises, creative process, technical experiments
+        and personal development in Audiovision.
       </p>
     </header>
 
-    <nav>
+    <nav class="navbar">
       <a href="#intro">Introduction</a>
       <a href="#week2">Week 2</a>
       <a href="#week3">Week 3</a>
@@ -252,74 +25,97 @@
       <a href="#week5">Week 5</a>
     </nav>
 
-    <section id="intro">
+    <section id="intro" class="card">
       <span class="week-label">Introduction</span>
       <h2>Blog Note</h2>
 
       <div class="honesty-note">
         <p>
-          Some of these entries were completed as catch-up reflections after the original class week. I have used this blog to document my learning process honestly, separate completed work from planned work, and identify the evidence I still need to add, such as exported audio files, screenshots and class feedback.
+          Some of these entries were completed as catch-up reflections after the original class week.
+          I have used this blog to document my learning process honestly, separate completed work
+          from planned work, and identify the evidence I still need to add, such as exported audio files,
+          screenshots and class feedback.
         </p>
       </div>
 
       <p>
-        This blog is a record of my Audiovision learning process. It includes my sound experiments, creative decisions, technical notes and reflections on what I learned from each weekly task. Where an exercise still needs more evidence, I have marked the upload or screenshot area clearly so I can complete it with my own files.
+        This blog is a record of my Audiovision learning process. It includes my sound experiments,
+        creative decisions, technical notes and reflections on what I learned from each weekly task.
+        Where an exercise still needs more evidence, I have marked the upload or screenshot area clearly
+        so I can complete it with my own files.
       </p>
     </section>
 
-    <section id="week2">
+    <section id="week2" class="card">
       <span class="week-label">Week 2</span>
       <h2>Timbre: Exploring Kontakt Band and Orchestral Sounds</h2>
 
-      <span class="status">Completed / To add media evidence</span>
-      <span class="status">Timbre</span>
-      <span class="status">Kontakt</span>
-      <span class="status">Band</span>
-      <span class="status">Orchestral</span>
+      <div class="tag-row">
+        <span class="status">Completed / To add media evidence</span>
+        <span class="status">Timbre</span>
+        <span class="status">Kontakt</span>
+        <span class="status">Band</span>
+        <span class="status">Orchestral</span>
+      </div>
 
       <h3>About Me</h3>
       <p>
-        My name is Sihao Wang. I am interested in digital media, sound design and the way audio can change the emotional meaning of moving images. I chose Audiovision because I want to understand how sound, music and atmosphere work together to create a stronger viewing and listening experience.
+        My name is Sihao Wang. I am interested in digital media, sound design and the way audio can
+        change the emotional meaning of moving images. I chose Audiovision because I want to understand
+        how sound, music and atmosphere work together to create a stronger viewing and listening experience.
       </p>
 
       <p>
-        In my previous creative work, I have mainly focused on visual design and editing, but this studio gives me a chance to pay more attention to sound as an independent creative language. I am especially interested in how small changes in timbre, rhythm and texture can completely change the feeling of a scene or a piece of media.
+        In my previous creative work, I have mainly focused on visual design and editing, but this studio
+        gives me a chance to pay more attention to sound as an independent creative language. I am especially
+        interested in how small changes in timbre, rhythm and texture can completely change the feeling of a
+        scene or a piece of media.
       </p>
 
       <h3>My Strengths in Sound</h3>
       <p>
-        One of my strengths is that I am sensitive to mood and atmosphere. When I listen to music or sound effects, I usually think about what kind of image, memory or emotion the sound can create. I also enjoy experimenting with different layers and trying to combine sounds that have different textures.
+        One of my strengths is that I am sensitive to mood and atmosphere. When I listen to music or sound
+        effects, I usually think about what kind of image, memory or emotion the sound can create. I also enjoy
+        experimenting with different layers and trying to combine sounds that have different textures.
       </p>
 
       <h3>Areas I Want to Improve</h3>
       <p>
-        Across the semester, I want to improve my technical skills in audio production, especially using a DAW, arranging sounds more clearly, and making better decisions about mixing. I also want to become more confident when explaining my creative choices and evaluating both my own work and other students' work.
+        Across the semester, I want to improve my technical skills in audio production, especially using a DAW,
+        arranging sounds more clearly, and making better decisions about mixing. I also want to become more
+        confident when explaining my creative choices and evaluating both my own work and other students' work.
       </p>
 
       <h3>Task</h3>
       <p>
-        For Week 2, the task was to open a DAW, load the Native Instruments Kontakt sampler, browse the libraries, choose sounds that were interesting, and compose a short track exploring timbre. For my piece, I focused on two types of sounds inside Kontakt: <strong>Band</strong> and <strong>Orchestral</strong>.
+        For Week 2, the task was to open a DAW, load the Native Instruments Kontakt sampler, browse the libraries,
+        choose sounds that were interesting, and compose a short track exploring timbre. For my piece, I focused
+        on two types of sounds inside Kontakt: <strong>Band</strong> and <strong>Orchestral</strong>.
       </p>
 
-      <div class="catchup">
+      <div class="highlight">
         <p>
-          My aim was to explore the contrast between two sound worlds: the more direct and modern feeling of band instruments, and the wider, cinematic feeling of orchestral instruments.
+          My aim was to explore the contrast between two sound worlds: the more direct and modern feeling of band
+          instruments, and the wider, cinematic feeling of orchestral instruments.
         </p>
       </div>
 
       <h3>Selected Sounds</h3>
       <div class="sound-grid">
         <div class="sound-card">
-          <h3>Band Sound</h3>
+          <h4>Band Sound</h4>
           <p>
-            The band sound felt more grounded and close to a live performance. It gave the track a clearer rhythm and a more human feeling. I used this sound to create the main body of the piece and to make the music feel more direct.
+            The band sound felt more grounded and close to a live performance. It gave the track a clearer rhythm
+            and a more human feeling. I used this sound to create the main body of the piece and to make the music
+            feel more direct.
           </p>
         </div>
 
         <div class="sound-card">
-          <h3>Orchestral Sound</h3>
+          <h4>Orchestral Sound</h4>
           <p>
-            The orchestral sound had a wider and more emotional quality. It felt more cinematic and dramatic, so I used it to add atmosphere, tension and depth. This sound helped the track feel larger and more immersive.
+            The orchestral sound had a wider and more emotional quality. It felt more cinematic and dramatic, so I
+            used it to add atmosphere, tension and depth. This sound helped the track feel larger and more immersive.
           </p>
         </div>
       </div>
@@ -330,15 +126,21 @@
 
       <h3>Creative Process</h3>
       <p>
-        I started by browsing different sounds in Kontakt and listening carefully to how each instrument changed the mood of the track. I chose the Band sound first because it had a strong and familiar character. It helped me build a basic musical idea and gave the track a clear starting point.
+        I started by browsing different sounds in Kontakt and listening carefully to how each instrument changed
+        the mood of the track. I chose the Band sound first because it had a strong and familiar character. It helped
+        me build a basic musical idea and gave the track a clear starting point.
       </p>
 
       <p>
-        After that, I added the Orchestral sound to create contrast. Compared with the Band sound, the Orchestral sound felt more spacious and emotional. I used it more as a background layer and atmosphere rather than only as a main melody. This helped the piece feel more cinematic.
+        After that, I added the Orchestral sound to create contrast. Compared with the Band sound, the Orchestral
+        sound felt more spacious and emotional. I used it more as a background layer and atmosphere rather than only
+        as a main melody. This helped the piece feel more cinematic.
       </p>
 
       <p>
-        During the composition process, I experimented with layering the two sounds together. Sometimes the Band sound made the track feel too direct, while the Orchestral sound made it feel more dramatic. I tried to balance them so that they could support each other instead of competing for attention.
+        During the composition process, I experimented with layering the two sounds together. Sometimes the Band sound
+        made the track feel too direct, while the Orchestral sound made it feel more dramatic. I tried to balance them
+        so that they could support each other instead of competing for attention.
       </p>
 
       <h3>Final Track Upload</h3>
@@ -355,50 +157,67 @@
 
       <h3>Reflection</h3>
       <p>
-        Through this task, I learned that timbre can be just as important as melody or rhythm. Even when the musical idea is simple, changing the sound source can create a completely different emotional effect. The Band sound made the work feel more physical and performance-based, while the Orchestral sound made it feel larger, slower and more cinematic.
+        Through this task, I learned that timbre can be just as important as melody or rhythm. Even when the musical
+        idea is simple, changing the sound source can create a completely different emotional effect. The Band sound
+        made the work feel more physical and performance-based, while the Orchestral sound made it feel larger, slower
+        and more cinematic.
       </p>
 
       <p>
-        One challenge was controlling the balance between the two sounds. The orchestral layer could easily become too strong and cover the band layer, so I had to think carefully about volume, space and arrangement. This made me realise that sound design is not only about choosing interesting sounds, but also about deciding how they interact.
+        One challenge was controlling the balance between the two sounds. The orchestral layer could easily become too
+        strong and cover the band layer, so I had to think carefully about volume, space and arrangement. This made me
+        realise that sound design is not only about choosing interesting sounds, but also about deciding how they interact.
       </p>
     </section>
 
-    <section id="week3">
+    <section id="week3" class="card">
       <span class="week-label">Week 3</span>
       <h2>Harmony: Triadic Interchange and Kontakt Chord Tools</h2>
 
-      <span class="status">Catch-up entry</span>
-      <span class="status">Harmony</span>
-      <span class="status">Triadic Interchange</span>
-      <span class="status">Kontakt Chord Tool</span>
+      <div class="tag-row">
+        <span class="status">Catch-up entry</span>
+        <span class="status">Harmony</span>
+        <span class="status">Triadic Interchange</span>
+        <span class="status">Kontakt Chord Tool</span>
+      </div>
 
       <div class="honesty-note">
         <p>
-          This is a catch-up entry. I have written it as a plan and reflection framework. After completing the actual audio exercise, I will replace the placeholders with my exported track, screenshots and any real feedback I receive.
+          This is a catch-up entry. I have written it as a plan and reflection framework. After completing the actual
+          audio exercise, I will replace the placeholders with my exported track, screenshots and any real feedback I receive.
         </p>
       </div>
 
       <h3>Task Understanding</h3>
       <p>
-        The Week 3 task focuses on harmony. The first exercise is triadic interchange, where a simple triad is copied and one note is changed by a semitone or tone. This creates a progression through small note movements rather than traditional functional harmony.
+        The Week 3 task focuses on harmony. The first exercise is triadic interchange, where a simple triad is copied
+        and one note is changed by a semitone or tone. This creates a progression through small note movements rather
+        than traditional functional harmony.
       </p>
 
       <p>
-        The second part involves using Kontakt's chord tools with a piano sound. The aim is to explore suggested chord progressions, trigger them with individual MIDI notes, and compare how different chord choices affect the feeling of the piece.
+        The second part involves using Kontakt's chord tools with a piano sound. The aim is to explore suggested chord
+        progressions, trigger them with individual MIDI notes, and compare how different chord choices affect the feeling
+        of the piece.
       </p>
 
       <h3>Planned Creative Process</h3>
       <p>
-        I plan to begin with a simple piano sound so the harmonic movement is easy to hear. I will start with one triad, duplicate it several times, and change only one note each time. I will listen carefully to which changes feel smooth and which ones feel more like a shift into a different tonal world.
+        I plan to begin with a simple piano sound so the harmonic movement is easy to hear. I will start with one triad,
+        duplicate it several times, and change only one note each time. I will listen carefully to which changes feel smooth
+        and which ones feel more like a shift into a different tonal world.
       </p>
 
       <p>
-        After creating a piano version, I will try replacing the piano with a different Kontakt instrument. This will help me compare how the same chord progression feels when the timbre changes.
+        After creating a piano version, I will try replacing the piano with a different Kontakt instrument. This will help
+        me compare how the same chord progression feels when the timbre changes.
       </p>
 
       <h3>Peer Feedback Plan</h3>
       <p>
-        After I complete the track, I will ask a classmate to listen to the chord progression and comment on which chord changes feel natural or awkward. I will then update this section with their real feedback and explain what I changed in response.
+        After I complete the track, I will ask a classmate to listen to the chord progression and comment on which chord
+        changes feel natural or awkward. I will then update this section with their real feedback and explain what I changed
+        in response.
       </p>
 
       <h3>Evidence to Add</h3>
@@ -434,41 +253,52 @@
 
       <h3>Reflection Framework</h3>
       <p>
-        This exercise will help me think about harmony as movement between notes rather than only as chord names. I expect the limitation of changing one note at a time to make the process more controlled, but it may also feel restrictive if I want a more dramatic harmonic shift.
+        This exercise will help me think about harmony as movement between notes rather than only as chord names. I expect
+        the limitation of changing one note at a time to make the process more controlled, but it may also feel restrictive
+        if I want a more dramatic harmonic shift.
       </p>
 
       <p>
-        After completing the exercise, I will update this reflection with specific examples from my chord progression, including which changes worked best and which changes I decided to revise.
+        After completing the exercise, I will update this reflection with specific examples from my chord progression,
+        including which changes worked best and which changes I decided to revise.
       </p>
     </section>
 
-    <section id="week4">
+    <section id="week4" class="card">
       <span class="week-label">Week 4</span>
       <h2>Rhythm: Pattern, Timing and Movement</h2>
 
-      <span class="status">Catch-up entry</span>
-      <span class="status">Rhythm</span>
-      <span class="status">Timing</span>
-      <span class="status">Pattern</span>
+      <div class="tag-row">
+        <span class="status">Catch-up entry</span>
+        <span class="status">Rhythm</span>
+        <span class="status">Timing</span>
+        <span class="status">Pattern</span>
+      </div>
 
       <div class="honesty-note">
         <p>
-          This is a catch-up entry. I have written this section as a plan and reflection structure. I will update it with my real rhythm exercise, screenshots and audio evidence after completing the work.
+          This is a catch-up entry. I have written this section as a plan and reflection structure. I will update it with
+          my real rhythm exercise, screenshots and audio evidence after completing the work.
         </p>
       </div>
 
       <h3>Task Understanding</h3>
       <p>
-        Week 4 focuses on rhythm. For this entry, I need to document how rhythmic patterns can create movement, tension and energy in a sound piece. Instead of only focusing on melody or atmosphere, this week requires attention to timing, repetition and variation.
+        Week 4 focuses on rhythm. For this entry, I need to document how rhythmic patterns can create movement, tension
+        and energy in a sound piece. Instead of only focusing on melody or atmosphere, this week requires attention to timing,
+        repetition and variation.
       </p>
 
       <h3>Planned Creative Process</h3>
       <p>
-        I plan to create a short rhythmic study in the DAW using a simple repeated pattern. I will start with a clear pulse, then gradually add extra layers. I want to explore how rhythm becomes more interesting through small variations, rests and changes in density.
+        I plan to create a short rhythmic study in the DAW using a simple repeated pattern. I will start with a clear pulse,
+        then gradually add extra layers. I want to explore how rhythm becomes more interesting through small variations,
+        rests and changes in density.
       </p>
 
       <p>
-        I will also compare sounds with different attacks. Short sounds may work better for clear rhythmic hits, while longer sounds may create background movement. By combining them, I can test how rhythm and texture work together.
+        I will also compare sounds with different attacks. Short sounds may work better for clear rhythmic hits, while longer
+        sounds may create background movement. By combining them, I can test how rhythm and texture work together.
       </p>
 
       <h3>Evidence to Add</h3>
@@ -494,36 +324,44 @@
 
       <h3>Reflection Framework</h3>
       <p>
-        This exercise should help me understand rhythm as a design tool. Rhythm is not only about creating a beat; it can control how the listener feels time, movement and tension.
+        This exercise should help me understand rhythm as a design tool. Rhythm is not only about creating a beat; it can
+        control how the listener feels time, movement and tension.
       </p>
 
       <p>
-        After completing the exercise, I will evaluate whether my rhythm feels too repetitive or whether the layers create enough development. I will also reflect on how the rhythm could support moving image or audiovisual work.
+        After completing the exercise, I will evaluate whether my rhythm feels too repetitive or whether the layers create
+        enough development. I will also reflect on how the rhythm could support moving image or audiovisual work.
       </p>
     </section>
 
-    <section id="week5">
+    <section id="week5" class="card">
       <span class="week-label">Week 5</span>
       <h2>Extreme Time Stretching: Paulstretch</h2>
 
-      <span class="status">Catch-up entry</span>
-      <span class="status">Paulstretch</span>
-      <span class="status">Time Stretching</span>
-      <span class="status">Experimental Sound</span>
+      <div class="tag-row">
+        <span class="status">Catch-up entry</span>
+        <span class="status">Paulstretch</span>
+        <span class="status">Time Stretching</span>
+        <span class="status">Experimental Sound</span>
+      </div>
 
       <div class="honesty-note">
         <p>
-          This is a catch-up entry. I have written the section as a guide for completing the Week 5 task honestly. I will replace the placeholders with my real source files, rendered outputs, screenshots and final composition after completing the Paulstretch experiment.
+          This is a catch-up entry. I have written the section as a guide for completing the Week 5 task honestly. I will
+          replace the placeholders with my real source files, rendered outputs, screenshots and final composition after
+          completing the Paulstretch experiment.
         </p>
       </div>
 
       <h3>Task Understanding</h3>
       <p>
-        Week 5 focuses on extreme time stretching using Paulstretch. The task requires at least three different types of audio, at least five rendered outputs, and a new composition made from those stretched sounds.
+        Week 5 focuses on extreme time stretching using Paulstretch. The task requires at least three different types of audio,
+        at least five rendered outputs, and a new composition made from those stretched sounds.
       </p>
 
       <p>
-        The aim is to discover how ordinary audio can become atmospheric, abstract or cinematic when stretched. This exercise focuses less on traditional rhythm and melody, and more on texture, tone and slow changes over time.
+        The aim is to discover how ordinary audio can become atmospheric, abstract or cinematic when stretched. This exercise
+        focuses less on traditional rhythm and melody, and more on texture, tone and slow changes over time.
       </p>
 
       <h3>Planned Audio Sources</h3>
@@ -548,7 +386,9 @@
 
       <h3>Planned Composition Process</h3>
       <p>
-        After rendering the stretched outputs, I will import them into the DAW and arrange them as layers. I will focus on gradual changes, fades, density and contrast rather than a traditional beat. The final piece should feel more like a soundscape or atmosphere.
+        After rendering the stretched outputs, I will import them into the DAW and arrange them as layers. I will focus on
+        gradual changes, fades, density and contrast rather than a traditional beat. The final piece should feel more like
+        a soundscape or atmosphere.
       </p>
 
       <h3>Evidence to Add</h3>
@@ -575,16 +415,19 @@
 
       <h3>Reflection Framework</h3>
       <p>
-        This exercise should help me understand how sound can be transformed beyond its original purpose. A short sound may become a drone, a musical sound may become a background atmosphere, and a simple recording may become cinematic or surreal.
+        This exercise should help me understand how sound can be transformed beyond its original purpose. A short sound may
+        become a drone, a musical sound may become a background atmosphere, and a simple recording may become cinematic or surreal.
       </p>
 
       <p>
-        After completing the task, I will update this reflection with specific comments on which source worked best, which output was most useful, and how the stretched sounds shaped the final composition.
+        After completing the task, I will update this reflection with specific comments on which source worked best, which output
+        was most useful, and how the stretched sounds shaped the final composition.
       </p>
 
       <h3>Connection to Future Project Work</h3>
       <p>
-        From this week onwards, I will also use the blog to document project progress and collaboration. I will include screenshots, drafts, production notes and feedback so the blog shows both finished outcomes and the process behind them.
+        From this week onwards, I will also use the blog to document project progress and collaboration. I will include screenshots,
+        drafts, production notes and feedback so the blog shows both finished outcomes and the process behind them.
       </p>
     </section>
 

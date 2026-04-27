@@ -230,3 +230,28 @@ footer {
     position: static;
   }
 }
+.image-box {
+  margin-top: 18px;
+  background: #242836;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 650px;
+  max-height: 420px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #bfc4d2;
+  text-align: center;
+}
